@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order List</title>
+    <link rel="stylesheet" href="../../../css/admin/orders/order_list.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="container">
+        <!-- Search Bar -->
+        <div class="search-bar">
+            <img src="../../../images/Rectangle 343.png" alt="Search Icon" class="search-icon">
+            <div class="search-text">ID, Customer name, Products name...</div>
+        </div>
+
+        <!-- Header -->
+        <div class="header-row">
+            <img src="../../../images/Rectangle 339.png" alt="Header Image" class="header-image">
+            <div class="header-title">ORDER LIST</div>
+        </div>
+
+        <!-- Order List Table -->
+        <div class="order-list">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Customer Name</th>
+                        <th>Status</th>
+                        <th>Total</th>
+                        <th>Order S-date</th>
+                        <th>Order E-date</th>
+                        <th>Payment Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>#1</td>
+                        <td>Nguyen Cao Danh</td>
+                        <td><button class="progress-button">Progressing</button></td>
+                        <td>$260</td>
+                        <td>28/02/2024</td>
+                        <td>29/02/2024</td>
+                        <td><button class="paid-button">PAID</button></td>
+                        <td><button class="detail-button">Detail</button></td> <!-- Đổi thành button -->
+                    </tr>
+                    <!-- Repeat for other orders -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('../../admin/header_admin.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+
+          fetch('../../admin/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+
+          // Thêm sự kiện click cho nút "Detail"
+          document.querySelector('.detail-button').addEventListener('click', function() {
+              // Chuyển hướng người dùng đến trang chi tiết đơn hàng
+              window.location.href = '../../../../static/html/admin/ordres/order_detail_employee.html';
+          });
+      });
+    </script>
+
+</body>
+</html>

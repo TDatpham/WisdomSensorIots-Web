@@ -1,0 +1,18 @@
+/* index.css */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#iframeContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+iframe {
+    flex: 1; /* Chiếm toàn bộ không gian trống */
+    width: 100%;
+    border: 0;
+}

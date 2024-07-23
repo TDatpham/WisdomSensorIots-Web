@@ -1,0 +1,7 @@
+{
+
+    "java.configuration.updateBuildConfiguration": "interactive"
+
+    "livePreview.defaultPreviewPath": "/target/classes/static/html/admin/header_admin.html"
+
+}

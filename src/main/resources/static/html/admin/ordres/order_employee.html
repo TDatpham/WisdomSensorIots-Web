@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <link rel="stylesheet" href="../../../../static/css/admin/orders/order_employee.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="outer-container">
+        <div class="container">
+            <div class="header-row">
+                <div class="eclip"></div>
+                <div class="username">Username</div>
+                <div class="my-orders">My Orders</div>
+            </div>
+            <div class="order-line-first"></div>
+            <div class="button-row">
+                <button class="radius-button"></button>
+                <button class="print-button">Print</button>
+            </div>
+            <div class="button-row">
+                <button class="select-button"></button>
+                <div class="order-container">
+                    <!-- Đưa các order vào bên trong order-container -->
+                    <div class="order">
+                        <div class="order-id">ID: 14232</div>
+                        <div class="order-image"></div>
+                        <div class="order-status">The order was delivered</div>
+                        <div class="order-processing">Processing</div>
+                    </div>
+                    <div class="order-line"></div>
+                    <div class="order-details"> 
+                        <div class="order-product-image"></div>
+                        <div class="order-product-description">
+                            <div class="order-product-name">Fire alarm sensor package</div>
+                            <div class="order-product-quantity">x1</div>
+                        </div>
+                        <div class="order-product-price">250$</div>
+                    </div>
+                    <div class="order-line"></div>
+                    <div class="order-total">
+                        <span>Order Total:</span> <span class="total-price">260$</span>
+                    </div>
+                    <button class="detail-button">Detail</button>
+                </div>
+            </div>
+            <div class="total-orders">TOTAL ORDERS:</div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('../../admin/header_admin.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+
+          fetch('../../admin/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+              document.querySelector('.detail-button').addEventListener('click', function() {
+              window.location.href = '../../../../static/html/admin/ordres/order_detail_employee.html';
+          });
+      });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update service</title>
+    <link rel="stylesheet" href="../../../css/admin/service-list/update-service.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="header-placeholder"></div>
+        <div class="form">
+            <div class="form__header">
+                <h1 class="form__title">UPDATE SERVICE</h1>
+                <div class="form__image-input">
+                    <input type="file" id="serviceImage" class="form__file-input" accept="image/jpeg, image/png">
+                    <label for="serviceImage" class="form__file-label">Select Image</label>
+                </div>
+            </div>
+            <div class="form__body">
+                <div class="form__field">
+                    <label for="serviceName" class="form__label">Name</label>
+                    <input type="text" id="serviceName" class="form__input" placeholder="Service name" required>
+                </div>
+                <div class="form__field">
+                    <label for="serviceDescription" class="form__label">Describe</label>
+                    <input type="text" id="serviceDescription" class="form__input" placeholder="Describe" required>
+                </div>
+                <div class="form__field">
+                    <label for="serviceId" class="form__label">ID</label>
+                    <input type="text" id="serviceId" class="form__input" placeholder="S4657" required>
+                </div>
+                <div class="form__field form__field--inline">
+                    <label for="servicePrice" class="form__label">Price</label>
+                    <input type="text" id="servicePrice" class="form__input" placeholder="Price" required>
+                    <select id="servicePeriod" class="form__select">
+                        <option value="3-month" selected>3 Month</option>
+                        <option value="6-month">6 Month</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form__footer">
+                <button type="submit" class="form__button">SAVE</button>
+            </div>
+        </div>
+        <div id="footer-placeholder"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../../admin/header_admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+
+            fetch('../../admin/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+
+            document.querySelector('.detail-button').addEventListener('click', function() {
+                window.location.href = '../../../../static/html/admin/ordres/order_detail_employee.html';
+            });
+        });
+    </script>
+</body>
+
+</html>

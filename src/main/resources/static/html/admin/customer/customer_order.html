@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Order</title>
+    <link rel="stylesheet" href="../../../css/admin/customer/customer_order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+    <div class="filter-bar">
+        <button class="filter-button">ALL</button>
+        <button class="filter-button">Wait for pay</button>
+        <button class="filter-button">Transport</button>
+        <button class="filter-button">Waiting for delivery</button>
+        <button class="filter-button">Complete</button>
+        <button class="filter-button">Cancelled</button>
+        <button class="filter-button">Return/Refund</button>
+    </div>
+
+    <div class="search-bar">
+        <button class="search-icon-button">
+            <img src="../../../images/Rectangle 343.png" alt="Search Icon">
+        </button>
+        <input type="text" class="search-input" placeholder="Search by ID, Product name...">
+    </div>
+
+    <div class="order-list">
+        <div class="order-item">
+            <div class="order-header">
+                <span>ID: 14232</span>
+                <img src="../../../images/Delivery.png" alt="Delivery" class="delivery-icon">
+                <span>The order was delivered</span>
+                <span class="status processing">Processing</span>
+            </div>
+            <hr class="custom-line">
+            <div class="order-details">
+                <img src="../../../images/Fire Alarm.png" alt="Product" class="product-image">
+                <div class="product-info">
+                    <span>Fire alarm sensor package</span>
+                    <span class="price-duration">$250 / 6 months</span>
+                    <span>x1</span>
+                </div>
+            </div>
+            <hr class="custom-line">
+            <div class="order-total">
+                <i class="fas fa-dollar-sign"></i>
+                <span>Order Total: $260</span>
+            </div>
+            <div class="order-actions">
+                <button class="review-button">Review</button>
+                <button class="contact-button">Contact with staff</button>
+            </div>
+        </div>
+        <!-- Repeat order-item for additional orders -->
+    </div>
+</div>
+</body>
+</html>

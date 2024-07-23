@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Detail</title>
+    <link rel="stylesheet" href="../../../css/admin/employee/detail_employee.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div id="header-placeholder"></div>
+    <div class="employee-detail-container">
+        <div class="header">
+            <i class="fas fa-arrow-left"></i> Back
+        </div>
+        <div class="employee-detail">
+            <div class="avatar"></div>
+            <div class="employee-info">
+                <div class="employee-name">NGUYEN CAO DANH</div>
+                <div class="employee-id">ID: 12345</div>
+            </div>
+        </div>
+        
+        <div class="divider"></div>
+        <div class="employee-extra-info">
+            <div class="info-row">  
+                <div class="info-label">Email:</div>
+                <div class="info-value">danhcao@gmail.com</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Phone:</div>
+                <div class="info-value">022312312312</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Address:</div>
+                <div class="info-value">Lý Trường Kết, Hải Nam, Hải Dương, Lâm Đồng</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Gender:</div>
+                <div class="info-value">Male</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Birthday:</div>
+                <div class="info-value">02/02/2002</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Position:</div>
+                <div class="info-value">Manager</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">Department:</div>
+                <div class="info-value">Marketing</div>
+            </div>
+        </div>
+        <div class="horizontal-divider"></div> <!-- Đường line ngang mới -->
+        <div class="action-buttons">
+            <button class="order-button"><i class="fas fa-shopping-cart"></i> Order</button>
+            <button class="contract-button"><i class="fas fa-file-contract"></i> Contract</button>
+            <button class="edit-button" id="edit-button"><i class="fas fa-edit"></i> Edit</button>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            fetch('../../admin/header_admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+
+            fetch('../../admin/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const editButton = document.getElementById('edit-button');
+
+            if (editButton) {
+                editButton.addEventListener('click', function () {
+                    window.location.href = '../../admin/employee/edit_employee.html';
+                });
+            } else {
+                console.error('Không tìm thấy nút "Edit"');
+            }
+        });
+        document.addEventListener('DOMContentLoaded', function () {
+            const contractButton = document.getElementById('contract-button');
+
+            if (contractButton) {
+                contractButton.addEventListener('click', function () {
+                    window.location.href = '../../admin/contract/contract_detail.html';
+                });
+            } else {
+                console.error('Không tìm thấy nút "Edit"');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+/* Header Styles */
+.header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    width: 100%;
+}
+
+.header-logo {
+    width: 180px;
+    height: 110px;
+    object-fit: cover;
+}
+
+.header-title {
+    font-size: 36px;
+    margin-left: 20px;
+    color: #333;
+}
+
+/* Make the content and footer to be positioned properly */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer-placeholder {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Rest of your CSS */
+.loginusername, .loginpassword {
+    box-sizing: border-box;
+    width: 100%;
+    height: 54px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    margin-bottom: 20px;
+}
+
+.inputlogin {
+    margin-top: 80px;
+    margin-bottom: 80px;
+    background: #FFFFFF;
+    width: 50%;
+    height: 600px;
+    max-width: 641px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    width: 100%;
+    height: 54px;
+    background: rgba(127, 209, 235, 1);
+}
+
+.textlogin {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.forgotpassword {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #31ADD3;
+    text-align: center;
+}
+
+/* Background color for the entire page */
+.container {
+    height: 1000px;
+    background: rgba(127, 209, 235, 1);
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

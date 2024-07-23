@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Detail</title>
+    <link rel="stylesheet" href="../../../css/admin/contract/contract_detail.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="container">
+        <div class="header">
+            <button id="back-button" class="header-button1">
+                <img src="../../../images/Back.png" alt="Back">
+            </button>
+            
+            <button id="print-button" class="header-button">
+                <img src="../../../images/image 16.png" alt="Print">
+                PRINT
+            </button>
+        </div>
+        <div class="contract-details">
+            <h1 class="header-title">CONTRACT</h1>
+            <div class="detail-row">
+                <span class="detail-label">ID Contract:</span>
+                <span class="detail-value">23567</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Customer:</span>
+                <span class="detail-value">Nguyen Cao Danh</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Service package:</span>
+                <span class="detail-value">IoT sensor package</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Supplier:</span>
+                <span class="detail-value">Wisdom Engineering and Business Solutions</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Start date:</span>
+                <span class="detail-value">02/03/2024</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">End date:</span>
+                <span class="detail-value">02/09/2024</span>
+            </div>
+            <div class="terms">
+                <p>Party A (Customer) agrees with the terms given by Party B (Supplier).</p>
+            </div>
+            <div class="parties">
+                <div class="party-a">PARTY A</div>
+                <div class="party-b">PARTY B</div>
+            </div>
+        </div>
+        
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('../../admin/header_admin.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+
+          fetch('../../admin/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+      });
+    </script>
+</body>
+</html>

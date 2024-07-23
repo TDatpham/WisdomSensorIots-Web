@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../css/employee_setting/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/employee_setting/footer_setting.css">
+    <link rel="stylesheet" href="../../../html/employee_setting/forgot_password/forgot_password.html">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <img src="../../../images/logo.png" alt="Logo" class="header-logo">
+        <h1 class="header-title">LOGIN</h1>
+    </header>
+
+    <div class="container content">
+        <div class="inputlogin">
+            <div class="textlogin">
+                <p>LOGIN</p>
+            </div>
+            <br>
+            <div>
+                <input class="loginusername" type="text" placeholder="UserName" required>
+            </div>
+            <div>
+                <input class="loginpassword" type="password" placeholder="Password" value="" required>
+            </div>
+            <div class="buttonlogind">
+                <button class="btn bsb-btn-xl btn-primary" id="loginButton" type="submit">Login</button>
+            </div>
+            <a class="forgotpassword" id="forgotPasswordLink">Forgot password</a>
+        </div>
+    </div>
+
+    <footer id="footer-placeholder"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../../../html/employee_setting/footer_setting/footer_setting.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+
+            document.getElementById('forgotPasswordLink').addEventListener('click', function() {
+                window.location.href = '../../../html/employee_setting/forgot_password/forgot_password.html';
+            });
+
+            document.getElementById('loginButton').addEventListener('click', function() {
+                window.location.href = '../../../html/employee_setting/order_list_review/order_list_review.html';
+            });
+        });
+    </script>
+</body>
+</html>

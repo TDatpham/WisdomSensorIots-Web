@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/admin/login/login_admin.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <div class="form-group">
+            <i class="fa fa-user"></i>
+            <input type="text" placeholder="User Name" required>
+        </div>
+        <div class="form-group">
+            <i class="fa fa-lock"></i>
+            <input type="password" placeholder="Password" id="password" required>
+            <span class="toggle-password" onclick="togglePassword()">
+                <i class="fa fa-eye"></i>
+            </span>
+        </div>
+        <div class="forgot-password">
+            <a href="#">Forgot password?</a>
+        </div>
+        <button class="login-btn" type="submit" onclick="navigateToHome()">Login</button>
+    </div>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var toggleIcon = document.querySelector(".toggle-password i");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleIcon.classList.remove("fa-eye");
+                toggleIcon.classList.add("fa-eye-slash");
+            } else {
+                passwordField.type = "password";
+                toggleIcon.classList.remove("fa-eye-slash");
+                toggleIcon.classList.add("fa-eye");
+            }
+        }
+
+        function navigateToHome() {
+            window.location.href = "../../../html/admin/header_admin.html";
+        }
+    </script>
+</body>
+</html>

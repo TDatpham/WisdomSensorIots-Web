@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Poppins&display=swap');
+
+
+.imglogin{
+    /* Menu đăng nhập */
+position: absolute;
+width: 1440px;
+height: 814px;
+left: 150px;
+top: 251px;
+}
+
+.loginusername{
+  /* Rectangle 4 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 528px;
+height: 54px;
+left: 46px;
+top: 125px;
+background: #FFFFFF;
+border: 1px solid #000000;
+
+}
+.loginpassword{
+
+position: absolute;
+width: 528px;
+height: 54px;
+left: 46px;
+top: 212px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+
+}
+.inputlogin{
+    /* Đăng nhập */
+
+position: absolute;
+width: 641px;
+height: 714px;
+left: 500px;
+top: 301px;
+
+background: #FFFFFF;
+display: flex;
+        flex-direction: column;
+        gap: 10px;
+}
+.btn-primary{
+    /* Rectangle 9 */
+
+position: absolute;
+width: 528px;
+height: 54px;
+left: 46px;
+top: 300px;
+
+background: #7FD1EB;
+
+}
+.textlogin{
+    /* LOGIN */
+
+position: absolute;
+width: 74px;
+height: 29px;
+left: 46px;
+top: 19px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: flex-end;
+
+color: #000000;
+margin-top: 30px;
+
+}
+.rowicon{
+    display: flex;
+    justify-content: space-between;
+}
+.facebook{
+    /* Rectangle 10 */
+
+box-sizing: border-box;
+
+position: absolute;
+width: 240px;
+height: 66px;
+left: 46px;
+top: 526px;
+margin-right: 120px;
+background: #FFFFFF;
+opacity: 0.5;
+border: 1px solid #000000;
+border-radius: 10px;
+
+}
+.forgotpassword{
+ /* Forgot pasword */
+
+position: absolute;
+width: 178px;
+height: 29px;
+left: 48px;
+top: 396px;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #31ADD3;
+
+
+
+
+}
+.facebook img{
+width: 32px;
+height: 31px;
+left: 66px;
+top: 545px;
+border-radius: 255.5px;
+}
+.google{
+    /* Google */
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 240px;
+    height: 66px;
+    left: 46px;
+    top: 526px;
+    background: #FFFFFF;
+    opacity: 0.5;
+    border: 1px solid #000000;
+    border-radius: 10px;
+
+
+}
+.google img{
+    width: 40px;
+    height: 38px;
+}
+.line{
+ /* Hoặc */
+display: flex;
+justify-content: space-between;
+position: absolute;
+width: 526px;
+height: 56px;
+left: 46px;
+top: 440px;
+
+}
+.Register{
+align-items: center;
+position: absolute;
+width: 375px;
+height: 29px;
+left: 142px;
+top: 635px;
+}

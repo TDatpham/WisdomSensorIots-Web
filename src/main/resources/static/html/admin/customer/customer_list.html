@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer List</title>
+    <link rel="stylesheet" href="../../../css/admin/customer/customer_list.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="container">
+        <div class="header-row">
+            <div class="search-bar">
+                <button id="search-button" class="search-icon-button">
+                    <img src="../../../images/Rectangle 343.png" alt="Search">
+                </button>
+                <input type="text" id="search-input" class="search-text" placeholder="ID, Customer Name, ..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'ID, Customer Name, ...'">
+                
+            </div>
+        </div>
+        <div class="header-row">
+            <button id="filter-button" class="filter-icon-button">
+                <img src="../../../images/Rectangle 339.png" alt="Search">
+            </button>
+            <h1 class="header-title">WISDOM CUSTOMERS</h1>
+        </div>
+        <div class="customer-list">
+            <div class="customer-container">
+                <div class="customer-info">
+                    <img src="customer1.jpg" alt="" class="customer-image">
+                    <div class="customer-details">
+                        <div class="customer-name">Nguyen Cao Danh</div>
+                        <div class="customer-dob">22/12/2002</div>
+                    </div>
+                    <div class="customer-class">SILVER CLASS</div>
+
+                </div>
+            </div>
+            <!-- Repeat customer-container div for more customers -->
+        </div>
+        <div class="customer-list">
+            <div class="customer-container">
+                <div class="customer-info">
+                    <img src="customer1.jpg" alt="" class="customer-image">
+                    <div class="customer-details">
+                        <div class="customer-name">Nguyen Cao Danh</div>
+                        <div class="customer-dob">22/12/2002</div>
+                    </div>
+                    <div class="customer-class">SILVER CLASS</div>
+
+                </div>
+            </div>
+            <!-- Repeat customer-container div for more customers -->
+        </div>
+        
+        
+        <div class="pagination">
+            <a href="#">&laquo; Previous</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">Next &raquo;</a>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // JavaScript for search functionality
+        document.getElementById('search-input').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let customers = document.getElementsByClassName('customer-container');
+            Array.from(customers).forEach(customer => {
+                let name = customer.querySelector('.customer-name').textContent.toLowerCase();
+                customer.style.display = name.includes(filter) ? 'block' : 'none';
+            });
+        });
+        
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('../../admin/header_admin.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+
+          fetch('../../admin/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+      });
+      document.addEventListener('DOMContentLoaded', function() {
+    let customerContainers = document.querySelectorAll('.customer-container');
+
+    customerContainers.forEach(function(container) {
+        container.addEventListener('click', function() {
+            let customerName = container.querySelector('.customer-name').textContent;
+            
+            window.location.href = '../../../html/admin/customer/customer_detail.html?name=' + encodeURIComponent(customerName);
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract List</title>
+    <link rel="stylesheet" href="../../../css/admin/contract/contract_list.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+
+
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="container">
+        <div class="header-row">
+            <h1 class="header-title">CONTRACT LIST</h1>
+        </div>
+        <div class="header-row">
+            <button id="filter-button" class="filter-icon-button">
+                <img src="../../../images/Rectangle 339.png" alt="Filter" class="filter-icon">
+            </button>
+            <div class="search-bar">
+                <button id="search-button" class="search-icon-button">
+                    <img src="../../../images/Rectangle 343.png" alt="Search">
+                </button>
+                <input type="text" id="search-input" class="search-text" placeholder="ID, Contract Name, ..." onfocus="this.placeholder = ''" onblur="this.placeholder = 'ID, Customer Name, ...'">
+            </div>
+        </div>
+
+        <div class="contract-list">
+            <div class="contract-row">
+                <img src="../../../images/logo.png" alt="Contract Image" class="contract-image">
+                <div class="contract-details">
+                    <div class="contract-package">IoT sensor package</div>
+                    <div class="contract-customer">NGUYEN CAO DANH</div>
+                    <div class="contract-id">23567</div>
+                </div>
+            </div>
+            <!-- Add more contract rows as needed -->
+        </div>
+
+        <div class="pagination">
+            <a href="#">&laquo; Previous</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">Next &raquo;</a>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // JavaScript for search functionality
+        document.getElementById('search-input').addEventListener('input', function() {
+            let filter = this.value.toLowerCase();
+            let contracts = document.getElementsByClassName('contract-row');
+            Array.from(contracts).forEach(contract => {
+                let name = contract.querySelector('.contract-customer').textContent.toLowerCase();
+                contract.style.display = name.includes(filter) ? 'block' : 'none';
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    links.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    const targetIframe = this.getAttribute('id').replace('-link', 'Iframe');
+                    document.querySelectorAll('iframe.content').forEach(iframe => iframe.style.display = 'none');
+                    document.getElementById(targetIframe).style.display = 'block';
+                });
+            });
+    
+            // Default active link
+            document.getElementById('home-link').classList.add('active');
+            document.getElementById('contractIframe').style.display = 'block';
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+    // Lấy tất cả các container chứa hợp đồng
+    let contractRows = document.querySelectorAll('.contract-row');
+
+    contractRows.forEach(function(contractRow) {
+        contractRow.addEventListener('click', function() {
+            // Trong trường hợp này, chúng ta sẽ chuyển hướng người dùng đến trang chi tiết hợp đồng
+            window.location.href = '../../../../static/html/admin/contract/contract_detail.html'; // Đường dẫn của trang chi tiết hợp đồng
+        });
+    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('../../admin/header_admin.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+
+          fetch('../../admin/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+      });
+    </script>
+    
+</body>
+</html>

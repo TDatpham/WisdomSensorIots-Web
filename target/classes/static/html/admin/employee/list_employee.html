@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../../static/css/admin/employee/list_employee.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Employee List</title>
+</head>
+<body>
+    <div id="header-placeholder"></div>
+    <div class="employee-list">
+        <div class="search-bar">
+            <input type="text" placeholder="Search employee name">
+            <i class="fas fa-search"></i>
+        </div>
+        <button class="add-button-list" id="addButton">+ ADD</button>
+        <h2 class="gradient-text">Wisdom Employee</h2>
+        <div class="departments">
+            <div class="department">
+                <h3>Director</h3>
+                
+            </div>
+            <div class="employee-container">
+                <ul class="employee-list">
+                    <li><a href="../../../html/admin/employee/detail_emplpyee.html?1">Employee 1</a></li>
+                    <li><a href="../../../html/admin/employee/detail_emplpyee.html?2">Employee 2</a></li>
+                </ul>
+            </div>
+            <div class="department">
+                <h3>IT Department</h3>
+                
+            </div>
+            <div class="employee-container">
+                <div class="employee">
+                    <ul>
+                        <li>Employee 3</li>
+                        <li>Employee 4</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="department">
+                <h3>Marketing</h3>
+                
+            </div>
+            <div class="employee-container">
+                <div class="employee">
+                    <ul>
+                     
+                    </ul>
+                </div>
+            </div>
+            <div class="department">
+                <h3>Human Resources</h3>
+                
+            </div>
+            <div class="employee-container">
+                <div class="employee">
+                    <ul>
+                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="employee-list-container">
+            <!-- List of employees can go here if needed -->
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+
+
+    <script>
+           document.addEventListener('DOMContentLoaded', function() {
+            fetch('../../admin/header_admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+
+            fetch('../../admin/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        });
+        document.addEventListener('DOMContentLoaded', function() {
+            // Xử lý chuyển hướng khi nhấn nút ADD
+            const addButton = document.getElementById('addButton');
+            addButton.addEventListener('click', function() {
+                // Sử dụng window.location.assign để điều hướng
+                window.location.assign('../../../html/admin/employee/add_employee.html');
+            });
+
+            const links = document.querySelectorAll('.nav-menu a');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    links.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                    const targetIframe = this.getAttribute('id').replace('-link', 'Iframe');
+                    document.querySelectorAll('iframe.content').forEach(iframe => iframe.style.display = 'none');
+                    document.getElementById(targetIframe).style.display = 'block';
+                });
+            });
+    
+            // Default active link
+            document.getElementById('home-link').classList.add('active');
+            document.getElementById('homeIframe').style.display = 'block';
+        });
+    </script>
+</body>
+</html>

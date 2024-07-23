@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(180deg, rgba(235, 217, 173, 0.1) 0%, rgba(252, 182, 3, 0.5) 100%);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh; /* Ensures the container takes the full height of the viewport */
+}
+
+#header-placeholder, 
+#footer-placeholder {
+    width: 100%;
+    text-align: center;
+}
+
+.form {
+    background-color: #fff8f0; 
+    width: 100%; 
+    max-width: 600px; /* Adjust as needed */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form__header, .form__footer {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form__title {
+    background-image: linear-gradient(to right, #AA0FF2 27.3%, #AA0FF2 65%); 
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.form__image-input {
+    margin-bottom: 20px;
+}
+
+.form__file-input {
+    display: none;
+}
+
+.form__file-label {
+    background-color: #f0f0f0;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.form__body {
+    margin-bottom: 20px;
+}
+
+.form__field {
+    margin-bottom: 15px;
+}
+
+.form__field--inline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form__label {
+    display: block;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.form__input, .form__select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.form__button {
+    background-color: #0FF285; 
+    color: black;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Ensures button takes full width */
+}
+
+.form__input:not(:last-child) {
+    flex: 3; 
+}
+
+.form__select {
+    flex: 1;
+}
+
+.form__input:focus, .form__select:focus, .form__button:hover {
+    border-color: #04AA6D; 
+    outline: none; 
+}
+
+.form__file-label:hover, .form__file-label:focus {
+    background-color: #e0e0e0; 
+}
+
+@media (max-width: 768px) {
+    .form__field--inline {
+        flex-direction: column;
+    }
+    .form__input, .form__select {
+        width: auto; 
+        margin-right: 0;
+    }
+}

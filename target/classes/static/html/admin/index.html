@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../static/css/admin/index.css">
+    <title>My Website</title>
+</head>
+<body>
+    <div id="iframeContainer">
+        <!-- Include header -->
+        <iframe src="../../html/admin/header_admin.html" frameborder="0" id="headerIframe"></iframe>
+
+        <!-- Include content sections -->
+        <iframe src="../../html/admin/employee/list_employee.html" frameborder="0" id="homeIframe" class="content"></iframe>
+        <iframe src="../../html/admin/customer/customer_list.html" frameborder="0" id="aboutIframe" class="content" style="display: none;"></iframe>
+        <iframe src="../../html/admin/service/service_pack.html" frameborder="0" id="serviceIframe" class="content" style="display: none;"></iframe>
+        <iframe src="../../html/admin/contact/contact.html" frameborder="0" id="contactIframe" class="content" style="display: none;"></iframe>
+        <iframe src="../../html/admin/contract/contract_list.html" frameborder="0" id="contractIframe" class="content" style="display: none;"></iframe>
+
+        <!-- Include footer -->
+        <!-- <iframe src="../../html/admin/footer.html" frameborder="0" id="footerIframe"></iframe> -->
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const links = document.querySelectorAll('.nav-menu a'); // Lấy tất cả các liên kết trong thanh điều hướng
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Ngăn chặn hành động mặc định của liên kết
+                    links.forEach(l => l.classList.remove('active')); // Loại bỏ lớp 'active' từ tất cả các liên kết
+                    this.classList.add('active'); // Thêm lớp 'active' cho liên kết được nhấn
+
+                    const targetIframe = this.getAttribute('id').replace('-link', 'Iframe'); // Tạo id của iframe từ id của liên kết
+                    document.querySelectorAll('iframe.content').forEach(iframe => iframe.style.display = 'none'); // Ẩn tất cả các iframe
+                    document.getElementById(targetIframe).style.display = 'block'; // Hiển thị iframe tương ứng với liên kết được nhấn
+                });
+            });
+
+            // Default active link
+            document.getElementById('home-link').classList.add('active'); // Đặt 'Home' là liên kết mặc định được chọn khi tải trang
+            document.getElementById('homeIframe').style.display = 'block'; // Hiển thị iframe của 'Home' khi tải trang
+        });
+    </script>
+</body>
+</html>

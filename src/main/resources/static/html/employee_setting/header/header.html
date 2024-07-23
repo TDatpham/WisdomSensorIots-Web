@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../css/employee_setting/header.css">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Custom Header</title>
+    <style>
+        .nav-menu a.active {
+            border-bottom: 2px solid #000; /* Thay đổi màu và độ dày của đường gạch chân theo ý muốn */
+        }
+    </style>
+</head>
+<body>
+    <!-- Phần header -->
+    <header>        
+        <div class="header-container">
+            <img src="../../../images/logo.png" alt="Logo" class="logo1">
+            <nav class="nav-menu">
+                <a href="../../../static/html/admin/employee/list_employee.html" class="nav-link">HOME</a>
+                <a href="../../../static/html/admin/customer/customer_list.html" class="nav-link">ABOUT</a>
+                <a href="../../../static/html/admin/service-list/service-list.html" class="nav-link">SERVICE PACK</a>    
+                <a href="../../../static/html/admin/contract/contract_list.html" class="nav-link">CONTACT</a>
+            </nav>
+            <div class="icons">
+                <span class="icon">🔍</span>
+                <span class="icon">🔔</span>
+                <span class="icon">👤</span>
+            </div>
+            <button class="language-switch">VI/EN</button>
+        </div>
+    </header>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname; // Lấy đường dẫn của trang hiện tại
+
+            const links = document.querySelectorAll('.nav-menu a');
+
+            links.forEach(link => {
+                const linkPath = link.getAttribute('href'); // Lấy đường dẫn của từng liên kết
+
+                // Nếu đường dẫn của liên kết trùng với đường dẫn của trang hiện tại
+                // thì thêm lớp 'active' cho liên kết đó
+                if (linkPath === currentPage) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(180deg, rgba(235, 217, 173, 0.0768) 0%, rgba(252, 182, 3, 0.32) 100%);
+
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+}
+
+.search-bar {
+    width: 588px;
+    height: 72px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(248, 151, 5, 0.0945) 0%, rgba(248, 151, 5, 0.0945) 100%);
+    border: 1px solid rgba(0, 0, 0, 1);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.search-icon {
+    width: 72px;
+    height: 71px;
+    margin-right: 10px;
+    background: linear-gradient(90deg, rgba(248, 151, 5, 0.0945) 0%, rgba(248, 151, 5, 0.0945) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.search-text {
+    font-size: 18px;
+    color: #000;
+}
+
+.header-row {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.header-image {
+    width: 80px;
+    height: 70px;
+    margin-right: 20px;
+}
+
+.header-title {
+    margin-left: 400px;
+    font-size: 48px;
+    background: rgba(242, 15, 15, 1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.order-list {
+    margin: 20px 0;
+    background: rgba(248, 151, 5, 0.18);
+}
+
+.order-list table {
+    width: 100%;
+    border-collapse: collapse;
+    box-shadow: 0 2px 4px rgba(248, 151, 5, 0.18);
+
+}
+
+.order-list th, .order-list td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-list th {
+    background: rgba(248, 151, 5, 0.18);
+}
+
+.progress-button, .paid-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-button {
+    width: 120px;
+    background: rgba(242, 15, 15, 0.85);
+    color: #000;
+    text-align: center;
+    margin-left: -30px;
+
+}
+
+.paid-button {
+    width: 120px;
+    background: #00cc00;
+    color: #fff;
+}
+
+.pagination {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.pagination a {
+    margin: 0 5px;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #000;
+    background: #fff;
+}
+
+.pagination a:hover {
+    background: #f2f2f2;
+}
+.detail-button{
+    height: 33px;
+    width: 150px;
+    border: 1px solid rgba(0, 0, 0, 1);
+    border-radius: 22px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background: linear-gradient(90deg, rgba(5, 204, 248, 0.28) 0%, rgba(9, 140, 77, 0.1764) 100%);
+
+    
+}

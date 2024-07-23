@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Alarm Sensor Package</title>
+    <link rel="stylesheet" href="../../../css/admin/service-list/detail-service.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>    
+    <div class="product">
+        <div class="product__header">
+            <img class="product__image" src="../../../images/fire-alarm-sensor.png" alt="Fire alarm sensor image">
+            <h1 class="product__title">Fire alarm sensor package</h1>
+            <span class="product__price">$250/6 months</span>
+            <div class="product__rating">
+                ★★★★★
+            </div>
+        </div>
+        <div class="product__body">
+            <p class="product__description">Fire alarm sensor services are solutions that provide sensor devices and related systems to detect and warn of the occurrence of fire or smoke hazards in a given environment. These services have an important role to play in protecting people and property from the risk of fire and explosion. Here are some common features and applications of fire alarm sensor service:</p>
+            <ul class="product__features">
+                <li class="product__feature">Smoke Sensor System: Used to detect the presence of smoke in the air, alarm and activate the warning system when there are signs of fire danger.</li>
+                <li class="product__feature">Temperature Sensor System: Temperature sensors are used to detect sudden temperature surges, which could be a sign of combustion or fire hazard.</li>
+                <li class="product__feature">CO (Carbon Monoxide) Sensor System: Used to detect the presence of harmful CO gas in the air, this is a sign of combustion or fire hazard and also a cause of health hazard.</li>
+                <li class="product__feature">Pressure Sensing System: Pressure sensors can be used to detect changes in atmospheric pressure, an indication of combustion or smoke in enclosed spaces.</li>
+            </ul>
+        </div>
+        <button class="product__edit-button" onclick="goToUpdateServicePage()">EDIT</button>
+        <div class="product__reviews">
+            <h2 class="product__reviews-title">Reviews (1 Review)</h2>
+            <div class="review">
+                <p class="review__author">Danh</p>
+                <img class="review__picture" src="../../../images/rating-picture.png" alt="Rating picture">
+                <p class="review__comment">Excellent sensor!!!</p>
+                <div class="review__rating">★★★★★</div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('../../admin/header_admin.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+
+          fetch('../../admin/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+
+          document.querySelector('.detail-button').addEventListener('click', function() {
+              window.location.href = '../../../../static/html/admin/ordres/order_detail_employee.html';
+          });
+      });
+
+      function goToUpdateServicePage() {
+            window.location.href = '../../admin/service-list/update-service.html'; // Adjust the path as needed
+      }
+    </script>
+</body>
+</html>

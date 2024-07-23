@@ -1,0 +1,65 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content {
+    padding: 20px;
+}
+.add-promotion {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.add-promotion h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.add-promotion label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.add-promotion input[type="text"],
+.add-promotion input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.add-promotion .date-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.add-promotion .date-group input[type="text"] {
+    width: 30%;
+}
+.add-promotion .limit-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.add-promotion .limit-group label {
+    margin-right: 10px;
+}
+.add-promotion .limit-group input[type="radio"] {
+    margin-right: 5px;
+}
+.add-promotion button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.add-promotion button:hover {
+    background-color: #45a049;
+}

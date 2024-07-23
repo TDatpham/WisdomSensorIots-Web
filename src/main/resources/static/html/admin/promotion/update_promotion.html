@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Page with Header and Update Promotion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../../../css/admin/promotion/update_promotion.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="header-placeholder"></div>    
+
+    <div class="content">
+        <div class="add-promotion">
+            <h1>Update PROMOTION</h1>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+
+                <label for="describe">Describe:</label>
+                <input type="text" id="describe" name="describe">
+
+                <label for="code">Code:</label>
+                <input type="text" id="code" name="code">
+
+                <label>Start Date:</label>
+                <div class="date-group">
+                    <input type="text" id="start-day" name="start-day" placeholder="Day">
+                    <input type="text" id="start-month" name="start-month" placeholder="Month">
+                    <input type="text" id="start-year" name="start-year" placeholder="Year">
+                </div>
+
+                <label>End Date:</label>
+                <div class="date-group">
+                    <input type="text" id="end-day" name="end-day" placeholder="Day">
+                    <input type="text" id="end-month" name="end-month" placeholder="Month">
+                    <input type="text" id="end-year" name="end-year" placeholder="Year">
+                </div>
+
+                <div class="limit-group">
+                    <label>Limit:</label>
+                    <input type="radio" id="limit" name="limit" value="limit">
+                    <label for="limit">Limit</label>
+                    <input type="radio" id="no-limit" name="limit" value="no-limit">
+                    <label for="no-limit">No Limit</label>
+                </div>
+
+                <label for="amount">Amount:</label>
+                <input type="number" id="amount" name="amount" min="1" max="100">
+
+                <button onclick="goToAddPage()">Save</button>
+            </form>
+        </div>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          fetch('../../admin/header_admin.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('header-placeholder').innerHTML = data;
+              });
+
+          fetch('../../admin/footer.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('footer-placeholder').innerHTML = data;
+              });
+              document.querySelector('.detail-button').addEventListener('click', function() {
+              window.location.href = '../../../../static/html/admin/ordres/order_detail_employee.html';
+          });
+      });
+    </script>
+
+    <!-- Font Awesome Icon Library -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

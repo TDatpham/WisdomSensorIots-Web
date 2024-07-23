@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service list</title>
+    <link rel="stylesheet" href="../../../css/admin/service-list/service-list.css">
+    <link rel="stylesheet" href="../../../../static/css/admin/header_admin.css">
+</head>
+<body>
+    <div id="header-placeholder"></div>
+
+    <div class="service-list">
+        <div class="service-list__header">
+            <h1 class="title">SERVICE LIST</h1>
+            <button class="service-list__add-btn" onclick="goToAddServicePage()">+ ADD</button>
+        </div>
+        <div class="service-list__search">
+            <input type="text" placeholder="ID, Service Name, ...." class="service-list__search-input">
+        </div>
+        <div class="service-list__items"> 
+            <div class="service-list__item" onclick="goToServiceDetailPage()">
+                <img src="../../../images/car-sensor.png" alt="Car Sensor" class="service-list__icon">
+                <div class="service-list__details">
+                    <h2 class="service-list__title">Car sensor package</h2>
+                    <p class="service-list__description">Automotive sensors are devices used to sense and collect information about the vehicle's surroundings to support autopilot and improve driving safety.</p>
+                    <p class="service-list__price">$300 / 6 months</p>
+                    <a href="#" class="service-list__more">View more</a>
+                </div>
+            </div>
+        </div>
+        <div class="service-list__pagination">
+            <a href="#" class="service-list__page-link">1</a>
+            <a href="#" class="service-list__page-link">2</a>
+        </div>
+    </div>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('../../admin/header_admin.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+
+            fetch('../../admin/footer.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+            document.querySelector('.detail-button').addEventListener('click', function() {
+                window.location.href = '../../../../static/html/admin/ordres/order_detail_employee.html';
+            });
+        });
+
+        function goToAddServicePage() {
+            window.location.href = '../../admin/service-list/add-service.html'; // Adjust the path as needed
+        }
+
+        function goToServiceDetailPage() {
+            window.location.href = '../../admin/service-list/detail-service.html'; // Adjust the path as needed
+        }
+    </script>
+</body>
+</html>
